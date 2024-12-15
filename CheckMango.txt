@@ -1,0 +1,17 @@
+
+db.createCollection("contactlist")
+db.contactlist.insertMany([ {lastname:"Emilie" , firstname:"Moris" , email:"ben@gmail.com", age : 26}, {lastname:"Kefi" , firstname:"Seif" , email:"kefi@gmail.com" , age: 15 } ])
+db.contactlist.insertMany([ {lastname:"Ben" , firstname:"Moris" , email:"ben@gmail.com", age : 26}, {lastname:"Kefi" , firstname:"Seif" , email:"kefi@gmail.com" , age: 15 } ])
+
+db.contactlist.findOne({_id:ObjectId("6752db58aa5d3e54b2dd1f24")})
+
+db.contactlist.find({age :{$gt:18}})
+
+db.contactlist.find({age :{$gt:18} , lastname :"/ah/"}  )
+
+db.contactlist.updateMany({firstname:"Seif", lastname:"Kefi"} , {$set :{firstname:"Anis"} })
+
+db.contactlist.deleteMany({age : {$lt:5}})
+
+
+db.contactlist.find()
